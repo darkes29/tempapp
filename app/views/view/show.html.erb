@@ -1,0 +1,46 @@
+
+<p>
+<table border = 1>
+  <tr>
+    <td><strong>Температура:</strong></td>
+    <td><strong>Время:</strong></td>
+  </tr>
+  <% @col.times {|i| %>
+  <tr>
+  <td><%= @article[i].temperature  %></td>
+  
+  <td><%= @article[i].time_messure %></td>
+</tr>
+  <% } %>
+</table>
+  
+</p>
+<button><a href="javascript:window.location.reload()">Обновить</a></button>
+<script type='text/javascript'>
+function obnovit_stranicu() {
+  location.reload();
+}
+setInterval("obnovit_stranicu()", 10000);
+</script>
+<div id="myfirstchart" style="height: 250px;">
+<script type="text/javascript">
+	new Morris.Line({
+  // ID of the element in which to draw the chart.
+  element: 'myfirstchart',
+  // Chart data records -- each entry in this array corresponds to a point on
+  // the chart.
+
+  data: [
+  
+  {data: '2', value: '12'} ],
+  
+  // The name of the data record attribute that contains x-values.
+  xkey: 'data',
+  // A list of names of data record attributes that contain y-values.
+  ykeys: ['value'],
+  // Labels for the ykeys -- will be displayed when you hover over the
+  // chart.
+  labels: ['value']
+});
+</script></div>
+ 
