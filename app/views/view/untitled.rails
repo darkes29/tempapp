@@ -1,0 +1,16 @@
+<p>
+<table border = 1>
+  <tr>
+    <td><strong>Температура:</strong></td>
+    <td><strong>Время:</strong></td>
+  </tr>
+  <% @col.times {|i| %>
+  <tr>
+  <td><%= @article[i].temperature  %></td>
+  
+  <td><%= @article[i].time_messure %></td>
+</tr>
+  <% } %>
+</table>
+  
+</p>

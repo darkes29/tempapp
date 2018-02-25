@@ -3,15 +3,29 @@
   <head>
     <title>Tempapp</title>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload', 'morris': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag "http://www.google.com/jsapi", "morris", "raphael","raphael.min"%>
-
- 
+	<%= stylesheet_link_tag 'bootstrap', media: 'all' %>
+	<%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_include_tag 'application', 'bootstrap', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'jquery-3.3.1.min.js': 'reload', 'morris.js': 'reload', 'raphael.min.js': 'reload' %>
+    
   </head>
 
   <body>
-    <%= yield %>
+  <div id = "header">
+  	<%= render "layouts/navigation" %>
+</div>
+
+<div id = "content">
+  <div id="flash">
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>"><%= value %></div>
+  <% end %>
+</div>
+	<%= yield %>
+</div>
+<div id="footer">
+   &copy; Alexander Lomtev
+  </div>
+    
   </body>
 </html>

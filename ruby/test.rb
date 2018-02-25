@@ -20,11 +20,11 @@ while true do
 	b = serialport.read(100)
 	b = b.split(",")
 	a = Time.now
-    a = a.strftime( "%H:%M:%S %m/%d/%Y")
+    a = a.strftime( "%H:%M:%S %Y/%m/%d")
 acc2 = Account.new(
-    :temperature => b[1],
+    :temperature => b[3],
     :time_messure => a)
 acc2.save
-	sleep(10)	
+	sleep(3)	
 	end
 end
