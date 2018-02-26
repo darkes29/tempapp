@@ -15,4 +15,5 @@
 //= require_tree
 //= require chartkick
 //= require raphael
+//= require jquery
 //= require morris
